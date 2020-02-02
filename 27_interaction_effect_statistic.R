@@ -68,9 +68,15 @@ if (is.numeric(x1) && is.numeric(x2)) {
   }
 }
 
+x1 <- mammograph_data$SYMPT #TODO
+x2 <- mammograph_data$HIST #TODO
+
 # If Xi(i=1,2) is categorical, let A_ik denote the singleton set
 # containing its kth value.
-if (is.factor(x1) && is.factor(x2)) {
+if ((is.factor(x1) || is.logical(x1))
+    && (is.factor(x2) || is.logical(x2))
+) {
+
 }
 
 

@@ -38,6 +38,13 @@ mammograph_data$SYMPT <- factor(mammograph_data$SYMPT, ordered = TRUE)
 levels(mammograph_data$SYMPT) <-
   c("Strongly Agree", "Agree", "Disagree", "Strongly Disagree")
 
+mammograph_data$HIST <- ifelse(mammograph_data$HIST == 1,TRUE,FALSE)
+mammograph_data$HIST <- as.logical(mammograph_data$HIST)
+
+mammograph_data$BSE <- ifelse(mammograph_data$BSE == 1,TRUE,FALSE)
+mammograph_data$BSE <- as.logical(mammograph_data$BSE)
+
+
 mammograph_data$DETC <- factor(mammograph_data$DETC, ordered = TRUE)
 levels(mammograph_data$DETC) <-
   c("Not likely", "Somewhat likely", "Very likely")
