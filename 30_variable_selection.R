@@ -50,6 +50,9 @@ for (i in 1:length(list_main_effect)) {
 # TODO: Make sure this is correct
 # https://stackoverflow.com/questions/60032887/how-do-i-find-the-value-of-chi-square-of-alpha-0-05-and-degree-of-freedom-of-1-i
 chi_sq_alpha_1df <- dchisq(1-alpha, df=1)
+# I think it's this one:
+# because it matches the table here: http://uregina.ca/~gingrich/appchi.pdf
+chi_sq_alpha_1df <- qchisq(1-alpha, df=1)
 
 chosen_var <- c()
 if (as.numeric(curr_max[[1]][2]) > chi_sq_alpha_1df) {
