@@ -21,6 +21,7 @@ Define α=0.05/K and β=0.05/{K(K−1)}:
 
 K <- ncol(mammograph_data) - 1 #(response) #TODO automate this via formula
 alpha <- 0.05/K
+beta <- 0.05/(K*(K-1))
 
 # 1.  Use Procedure 2.1 to find W_M(X_i) for i=1,2,...,K.
 
