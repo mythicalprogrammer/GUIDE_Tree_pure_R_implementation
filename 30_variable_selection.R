@@ -21,3 +21,17 @@ Define α=0.05/K and β=0.05/{K(K−1)}:
 
 K <- ncol(mammograph_data) - 1 (response) #TODO automate this via formula
 alpha <- 0.05/K
+
+# 1.  Use Procedure 2.1 to find W_M(X_i) for i=1,2,...,K.
+
+list_main_effect <- c()
+j <- 1
+for (i in 1:ncol(mammograph_data)) {
+  curr_pred <- mammograph_data[i]
+  if (names(curr_pred) != "ME") {
+    chi_sq <- main_effect_chi_stat(mammograph_data$ME,
+                                   curr_pred[[1]], mammograph_data)
+    list_main_effect[[j]] <- c(names(curr_pred), chi_sq)
+    j = j + 1
+  }
+}
